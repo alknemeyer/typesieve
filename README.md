@@ -1,6 +1,6 @@
 # typesieve
 
-_Sure, it doesn't catch "all" bugs, but it helps_
+_"Catch some bugs a bit earlier/code a bit faster"_
 
 
 ## About
