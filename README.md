@@ -1,6 +1,6 @@
 # typesieve
 
-_Sure, it doesn't catch "all" bugs, but it helps!_
+_Sure, it doesn't catch "all" bugs, but it helps_
 
 
 ## About
