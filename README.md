@@ -76,15 +76,15 @@ Two approaches that I can think of:
 
 1. Add it as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in your project:
    ```
-   git submodule add https://github.com/alknemeyer/python-stubs
+   git submodule add https://github.com/alknemeyer/typesieve
    ```
 2. Clone it to some global place on your computer, so that all projects share the same files
 
 The next step depends on your programming setup:
 
 - VS code with the [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) extension:
-    - Settings UI: navigate to Settings > Extensions > Pylance. Make sure the type checker is switched on ("Python › Analysis: Type Checking Mode"), then set "Python › Analysis: Stub Path" to the directory where you keep your stubs. If you went with option 1 above, you'd type `./python-stubs/`
-    - JSON UI: make sure the type checker is switched on (`"python.analysis.typeCheckingMode": "basic",`) then set `"python.analysis.stubPath": "./stubs/",` (or wherever you put your stubs)
+    - Settings UI: navigate to Settings > Extensions > Pylance. Make sure the type checker is switched on ("Python › Analysis: Type Checking Mode"), then set "Python › Analysis: Stub Path" to the directory where you keep your stubs. If you went with option 1 above, you'd type `./typesieve/`
+    - JSON UI: make sure the type checker is switched on (`"python.analysis.typeCheckingMode": "basic",`) then set `"python.analysis.stubPath": "./typesieve/",` (or wherever you put your stubs)
 
 There is probably a way to `pip install` this, though that seems like more of a hassle than I'm willing to deal with right now :)
 
