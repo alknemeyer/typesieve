@@ -15,12 +15,10 @@
 #   files, which (again) realistically would take more of your time
 #   (at least initially) but would be so satisfying once done :)
 
-from typing import Union
-
 __all__ = ['find_any']
 
 
-def find_any() -> Union[ODrive, None]: ...
+def find_any() -> ODrive: ...
 
 ###
 
