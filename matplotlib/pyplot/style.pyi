@@ -1,5 +1,10 @@
 from pathlib import Path
-from typing import List, Literal, Union
+from typing import List, Union
+# Python 3.6 compatibility
+try:
+    from typing import Literal
+except ImportError:
+    from typing_extensions import Literal
 
 available: List[str]
 

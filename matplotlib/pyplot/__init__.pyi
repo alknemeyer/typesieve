@@ -3,7 +3,12 @@
 # https://github.com/matplotlib/matplotlib/issues/13798
 # Hopefully they'll do so soon, allowing us to delete this wretched file
 
-from typing import Any, List, Optional, Tuple, Union, Literal
+from typing import Any, List, Optional, Tuple, Union
+# Python 3.6 compatibility
+try:
+    from typing import Literal
+except ImportError:
+    from typing_extensions import Literal
 from os import PathLike
 from . import style
 
