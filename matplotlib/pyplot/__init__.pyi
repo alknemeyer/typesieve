@@ -4,6 +4,7 @@
 # Hopefully they'll do so soon, allowing us to delete this wretched file
 
 from typing import Any, List, Optional, Sequence, Tuple, Union
+from . import style
 
 
 def plot(*args, **kwargs) -> List[Line2D]: ...
