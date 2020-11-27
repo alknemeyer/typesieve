@@ -3,7 +3,8 @@
 # https://github.com/matplotlib/matplotlib/issues/13798
 # Hopefully they'll do so soon, allowing us to delete this wretched file
 
-from typing import Any, List, Optional, Sequence, Tuple, Union
+from typing import Any, List, Optional, Tuple, Union, Literal
+from os import PathLike
 from . import style
 
 
@@ -13,7 +14,7 @@ def subplots(*args) -> Tuple[Any, Axes]: ...
 
 
 def title(x: str) -> Text: ...
-def legend(x: Union[str, Sequence[str]] = '') -> Legend: ...
+def legend(*args, **kwargs) -> Legend: ...
 def grid(b: Optional[bool] = None, which: str = 'major',
          axis: str = 'both', **kwargs) -> None: ...
 
@@ -36,6 +37,41 @@ def gca(*args, **kwargs) -> Axes: ...  # returns an Axes object
 
 
 class Figure:
+    def savefig(self,
+                fname: Union[str, PathLike, bytes],
+                dpi: Optional[Union[float, Literal['figure']]] = None,
+                quality: Optional[float] = None,
+                optimize: bool = False,
+                progressive: bool = False,
+                facecolor: Optional[str] = None,
+                edgecolor: Optional[str] = None,
+                orientation: Literal['landscape', 'portrait'] = 'portrait',
+                papertype: Optional[str] = None,
+                format: Optional[str] = None,
+                transparent: bool = False,
+                bbox_inches: Optional[str] = None,
+                pad_inches: Optional[float] = None,
+                frameon=None, metadata=None): ...
+
+    def show(self, x: bool = True) -> None: ...
+
+    def suptitle(self, t: str, x: float = 0.5, y: float = 0.98,
+                 ha: Literal['center', 'left', 'right'] = 'center',
+                 va: Literal['top', 'center', 'bottom', 'baseline'] = 'top',
+                 fontsize: Optional[float] = None,
+                 fontweight: Optional[float] = None,
+                 **kwargs_for_text_properties) -> Text: ...
+
+    def subplots_adjust(self,
+                        left=None,
+                        bottom=None,
+                        right=None,
+                        top=None,
+                        wspace=None,
+                        hspace=None,): ...
+
+    def tight_layout(self, renderer=None, pad=1.08,
+                     h_pad=None, w_pad=None, rect=None): ...
     ...
 
 
