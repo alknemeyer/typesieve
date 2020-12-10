@@ -3,7 +3,7 @@
 # https://github.com/matplotlib/matplotlib/issues/13798
 # Hopefully they'll do so soon, allowing us to delete this wretched file
 
-from typing import Any, List, Optional, Tuple, Union
+from typing import Any, Iterable, List, Optional, Tuple, Union
 # Python 3.6 compatibility
 try:
     from typing import Literal
@@ -15,7 +15,7 @@ from . import style
 
 def plot(*args, **kwargs) -> List[Line2D]: ...
 def scatter(*args, **kwargs) -> Any: ...
-def subplots(*args) -> Tuple[Any, Axes]: ...
+def subplots(*args) -> Tuple[Any, Iterable[Axes]]: ...
 
 
 def title(x: str) -> Text: ...
