@@ -6,7 +6,7 @@
 from typing import Any, Iterable, List, Optional, Tuple, Union
 # Python 3.6 compatibility
 try:
-    from typing import Literal
+    from typing import Literal  # type: ignore
 except ImportError:
     from typing_extensions import Literal
 from os import PathLike
@@ -15,7 +15,8 @@ from . import style
 
 def plot(*args, **kwargs) -> List[Line2D]: ...
 def scatter(*args, **kwargs) -> Any: ...
-def subplots(*args) -> Tuple[Any, Iterable[Axes]]: ...
+def subplot(*args, **kwargs) -> Axes: ...
+def subplots(*args, **kwargs) -> Tuple[Figure, Iterable[Axes]]: ...
 
 
 def title(x: str) -> Text: ...
@@ -44,6 +45,8 @@ def cla() -> None: ...
 
 
 class Figure:
+    def legend(self, *args, **kwargs) -> Legend: ...
+
     def savefig(self,
                 fname: Union[str, PathLike, bytes],
                 dpi: Optional[Union[float, Literal['figure']]] = None,
