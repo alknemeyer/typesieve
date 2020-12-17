@@ -32,6 +32,20 @@ def plus1(x: sp.Symbol) -> 'sp.Expression':
 
 Python's type checkers are perfectly aware of annotations like that
 
+Projects that use these types might have code that looks like the following:
+
+```python
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from sympy import Expression
+
+def plus2(x: sp.Symbol) -> 'Expression':
+    return x + 2
+```
+
+`TYPE_CHECKING` is a variable which the type checker will take as `True` (meaning `mypy` will "import" `Expression`) but which is `False` at runtime (meaning that Python won't _actually_ try to import `Expression` from SymPy, which would result in an error)
+
 THE POINT of this, is that similar skullduggery runs rife through this repo! And although it takes all of 2 minutes to familiarize yourself with it, it's still not necessarily obvious. Notes on the packages are as follows:
 
 
