@@ -21,8 +21,19 @@ def subplots(*args, **kwargs) -> Tuple[Figure, Iterable[Axes]]: ...
 
 def title(x: str) -> Text: ...
 def legend(*args, **kwargs) -> Legend: ...
+
+
 def grid(b: Optional[bool] = None, which: str = 'major',
          axis: str = 'both', **kwargs) -> None: ...
+
+
+def tight_layout(*,
+                 pad: float = 1.08,
+                 h_pad: Optional[float] = None,
+                 w_pad: Optional[float] = None,
+                 rect: Optional[Tuple[float, float, float, float]] = None
+                 ):
+    ...
 
 
 def xlabel(x: str) -> Text: ...
@@ -82,6 +93,14 @@ class Figure:
 
     def tight_layout(self, renderer=None, pad=1.08,
                      h_pad=None, w_pad=None, rect=None): ...
+
+    def set_size_inches(
+            self,
+            width_or_width_height: Union[float, Tuple[float, float]],
+            height: Optional[float],
+            forward: bool = True) -> ...:
+        ...
+
     ...
 
 
