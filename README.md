@@ -5,7 +5,7 @@ _"Catch some bugs a bit earlier/code a bit faster"_
 
 ## About
 
-A collection of type annotations for some popular Python packages, created as needed for the projects I work on. I do this instead of contributing to the official [Python typeshed](https://github.com/python/typeshed/tree/master/third_party) or the packages themselves, because:
+A collection of type annotations (see [PEP484](https://www.python.org/dev/peps/pep-0484/), and the ["stub files"](https://www.python.org/dev/peps/pep-0484/#stub-files) section in particular) for some popular Python packages, created as needed for the projects I work on. I do this instead of contributing to the official [Python typeshed](https://github.com/python/typeshed/tree/master/third_party) or the packages themselves, because:
 
 1. it's a lot easier
 2. I can commit directly to master
